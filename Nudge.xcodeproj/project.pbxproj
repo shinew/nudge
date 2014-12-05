@@ -14,6 +14,11 @@
 		14C877141A30F2AE0093AC10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C877131A30F2AE0093AC10 /* Images.xcassets */; };
 		14C877171A30F2AE0093AC10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C877151A30F2AE0093AC10 /* LaunchScreen.xib */; };
 		14C877231A30F2AE0093AC10 /* NudgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C877221A30F2AE0093AC10 /* NudgeTests.swift */; };
+		14C8772E1A30F5D60093AC10 /* AlarmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */; };
+		14C877301A30F66F0093AC10 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8772F1A30F66F0093AC10 /* Alarm.swift */; };
+		14C877321A30F7320093AC10 /* AlarmDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C877311A30F7320093AC10 /* AlarmDate.swift */; };
+		14FDE2B21A31280E00C88972 /* AlarmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FDE2B11A31280E00C88972 /* AlarmDB.swift */; };
+		14FDE2B41A313DA500C88972 /* AlarmScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FDE2B31A313DA500C88972 /* AlarmScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		14C8771C1A30F2AE0093AC10 /* NudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C877211A30F2AE0093AC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C877221A30F2AE0093AC10 /* NudgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgeTests.swift; sourceTree = "<group>"; };
+		14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmContainer.swift; sourceTree = "<group>"; };
+		14C8772F1A30F66F0093AC10 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		14C877311A30F7320093AC10 /* AlarmDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDate.swift; sourceTree = "<group>"; };
+		14FDE2B11A31280E00C88972 /* AlarmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDB.swift; sourceTree = "<group>"; };
+		14FDE2B31A313DA500C88972 /* AlarmScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,8 @@
 		14C877061A30F2AE0093AC10 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
+				14FDE2B51A31429500C88972 /* UI */,
+				14C8772C1A30F3FC0093AC10 /* Alarms */,
 				14C877091A30F2AE0093AC10 /* AppDelegate.swift */,
 				14C8770E1A30F2AE0093AC10 /* ViewController.swift */,
 				14C877101A30F2AE0093AC10 /* Main.storyboard */,
@@ -113,6 +125,25 @@
 				14C877211A30F2AE0093AC10 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14C8772C1A30F3FC0093AC10 /* Alarms */ = {
+			isa = PBXGroup;
+			children = (
+				14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */,
+				14C8772F1A30F66F0093AC10 /* Alarm.swift */,
+				14C877311A30F7320093AC10 /* AlarmDate.swift */,
+				14FDE2B11A31280E00C88972 /* AlarmDB.swift */,
+				14FDE2B31A313DA500C88972 /* AlarmScheduler.swift */,
+			);
+			path = Alarms;
+			sourceTree = "<group>";
+		};
+		14FDE2B51A31429500C88972 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +248,12 @@
 			files = (
 				14C8770F1A30F2AE0093AC10 /* ViewController.swift in Sources */,
 				14C8770A1A30F2AE0093AC10 /* AppDelegate.swift in Sources */,
+				14C877301A30F66F0093AC10 /* Alarm.swift in Sources */,
+				14FDE2B41A313DA500C88972 /* AlarmScheduler.swift in Sources */,
+				14C877321A30F7320093AC10 /* AlarmDate.swift in Sources */,
+				14FDE2B21A31280E00C88972 /* AlarmDB.swift in Sources */,
 				14C8770D1A30F2AE0093AC10 /* Nudge.xcdatamodeld in Sources */,
+				14C8772E1A30F5D60093AC10 /* AlarmContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +447,7 @@
 				14C877281A30F2AE0093AC10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14C877291A30F2AE0093AC10 /* Build configuration list for PBXNativeTarget "NudgeTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +456,7 @@
 				14C8772B1A30F2AE0093AC10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

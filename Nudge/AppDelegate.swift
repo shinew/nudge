@@ -14,9 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Setting notification permissions
+        if UIDevice.currentDevice().systemVersion >= "8" {
+            let settings = UIUserNotificationSettings(
+                forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge,
+                categories: nil
+            )
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        }
+        
         return true
     }
 
