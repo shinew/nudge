@@ -10,15 +10,15 @@ import Foundation
 
 enum DayOfWeek: Int {
     
-    case Monday     = 0b0000001
-    case Tuesday    = 0b0000010
-    case Wednesday  = 0b0000100
-    case Thursday   = 0b0001000
-    case Friday     = 0b0010000
-    case Saturday   = 0b0100000
-    case Sunday     = 0b1000000
+    case Sunday     = 0b0000001
+    case Monday     = 0b0000010
+    case Tuesday    = 0b0000100
+    case Wednesday  = 0b0001000
+    case Thursday   = 0b0010000
+    case Friday     = 0b0100000
+    case Saturday   = 0b1000000
     
-    static let allValues = [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
+    static let allValues = [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
 }
 
 //represents a collection of days in a week
@@ -48,6 +48,17 @@ class AlarmDate {
     
     func reset() {
         self.days = 0
+    }
+    
+    class func getWeekdayNumber(day: DayOfWeek) -> Int {
+        var idx = 1
+        for i in 1 ... 7 {
+            if ((idx << (i-1)) & day.rawValue) != 0 {
+                return i
+            }
+        }
+        NSLog("(AlarmDate) impossible weekday")
+        return -1
     }
     
     func getRaw() -> Int {

@@ -8,13 +8,13 @@
 
 import Foundation
 
-// represents one alarm set by the user
+//represents one alarm set by the user
 struct Alarm {
     
     var dates: AlarmDate
     var enabled: Bool
-    var minute: Int
-    var hour: Int
+    var minute: Int //[0, 59]
+    var hour: Int //[0, 23], 0 = midnight
     var repeat: Bool
     var index: Int
     
@@ -34,5 +34,29 @@ struct Alarm {
         self.dates = dates
         self.hour = hour
         self.minute = minute
+    }
+    
+    func getDate(day: DayOfWeek?) -> NSDate {
+        let currentDate = NSDate()
+        let components = NSCalendar.currentCalendar().components(
+            .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay,
+            fromDate: currentDate
+        )
+        let currentDateStart = NSCalendar.currentCalendar().dateFromComponents(components)!
+        var notifyDate = currentDateStart.dateByAddingTimeInterval(NSTimeInterval(hour * 3600 + minute * 60))
+        
+        if day != nil {
+            //move to the correct weekday
+            let weekday = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: currentDate).weekday
+            var distance = AlarmDate.getWeekdayNumber(day!) - weekday
+            if distance < 0 { distance += 7 }
+            notifyDate = notifyDate.dateByAddingTimeInterval(NSTimeInterval(distance * 24 * 3600))
+        }
+        
+        //check to make sure notification date is after the current date
+        if notifyDate.compare(currentDate) == NSComparisonResult.OrderedAscending {
+            return notifyDate.dateByAddingTimeInterval(24 * 3600)
+        }
+        return notifyDate
     }
 }

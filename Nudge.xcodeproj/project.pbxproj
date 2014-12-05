@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14C044361A3169A300B55F52 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C044351A3169A300B55F52 /* Conversion.swift */; };
 		14C8770A1A30F2AE0093AC10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C877091A30F2AE0093AC10 /* AppDelegate.swift */; };
 		14C8770D1A30F2AE0093AC10 /* Nudge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14C8770B1A30F2AE0093AC10 /* Nudge.xcdatamodeld */; };
 		14C8770F1A30F2AE0093AC10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8770E1A30F2AE0093AC10 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14C044351A3169A300B55F52 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		14C877041A30F2AE0093AC10 /* Nudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C877081A30F2AE0093AC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C877091A30F2AE0093AC10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14C044341A31698500B55F52 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				14C044351A3169A300B55F52 /* Conversion.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		14C876FB1A30F2AE0093AC10 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		14C877061A30F2AE0093AC10 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
+				14C044341A31698500B55F52 /* Library */,
 				14FDE2B51A31429500C88972 /* UI */,
 				14C8772C1A30F3FC0093AC10 /* Alarms */,
 				14C877091A30F2AE0093AC10 /* AppDelegate.swift */,
@@ -249,6 +260,7 @@
 				14C8770F1A30F2AE0093AC10 /* ViewController.swift in Sources */,
 				14C8770A1A30F2AE0093AC10 /* AppDelegate.swift in Sources */,
 				14C877301A30F66F0093AC10 /* Alarm.swift in Sources */,
+				14C044361A3169A300B55F52 /* Conversion.swift in Sources */,
 				14FDE2B41A313DA500C88972 /* AlarmScheduler.swift in Sources */,
 				14C877321A30F7320093AC10 /* AlarmDate.swift in Sources */,
 				14FDE2B21A31280E00C88972 /* AlarmDB.swift in Sources */,

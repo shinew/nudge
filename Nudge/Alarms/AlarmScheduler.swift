@@ -37,12 +37,24 @@ class AlarmScheduler {
     private func setRepeatAlarm(alarm: Alarm) {
         for day in DayOfWeek.allValues {
             if !alarm.dates.contains(day) {
-                continue
+                self.setNotification(alarm.getDate(day), repeatWeekly: true)
             }
         }
     }
     
     private func setOnetimeAlarm(alarm: Alarm) {
-        
+        self.setNotification(alarm.getDate(nil), repeatWeekly: false)
+    }
+    
+    //sets a notification timer for a certain date, with/without recurrence
+    private func setNotification(date: NSDate, repeatWeekly: Bool) {
+        var notification = UILocalNotification()
+        notification.alertBody = message
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.fireDate = date
+        if repeatWeekly {
+            notification.repeatInterval = NSCalendarUnit.WeekCalendarUnit
+        }
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 }
