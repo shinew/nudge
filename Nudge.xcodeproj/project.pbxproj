@@ -99,9 +99,9 @@
 		14C877061A30F2AE0093AC10 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
-				14C044341A31698500B55F52 /* Library */,
 				14FDE2B51A31429500C88972 /* UI */,
 				14C8772C1A30F3FC0093AC10 /* Alarms */,
+				14C044341A31698500B55F52 /* Library */,
 				14C877091A30F2AE0093AC10 /* AppDelegate.swift */,
 				14C8770E1A30F2AE0093AC10 /* ViewController.swift */,
 				14C877101A30F2AE0093AC10 /* Main.storyboard */,

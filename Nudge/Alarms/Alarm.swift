@@ -36,6 +36,7 @@ struct Alarm {
         self.minute = minute
     }
     
+    //Returns a time to fire the (first) notification for this alarm. Guaranteed to be on weekday 'day' (if day != nil), and not before the current time.
     func getDate(day: DayOfWeek?) -> NSDate {
         let currentDate = NSDate()
         let components = NSCalendar.currentCalendar().components(
@@ -45,17 +46,23 @@ struct Alarm {
         let currentDateStart = NSCalendar.currentCalendar().dateFromComponents(components)!
         var notifyDate = currentDateStart.dateByAddingTimeInterval(NSTimeInterval(hour * 3600 + minute * 60))
         
-        if day != nil {
-            //move to the correct weekday
-            let weekday = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: currentDate).weekday
-            var distance = AlarmDate.getWeekdayNumber(day!) - weekday
-            if distance < 0 { distance += 7 }
-            notifyDate = notifyDate.dateByAddingTimeInterval(NSTimeInterval(distance * 24 * 3600))
+        if day == nil {
+            //check to make sure notification date is after the current date - push back a DAY
+            if notifyDate.compare(currentDate) == NSComparisonResult.OrderedAscending {
+                return notifyDate.dateByAddingTimeInterval(24 * 3600)
+            }
+            return notifyDate
         }
         
-        //check to make sure notification date is after the current date
+        //move to the correct weekday
+        let weekday = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: currentDate).weekday
+        var distance = AlarmDate.getWeekdayNumber(day!) - weekday
+        if distance < 0 { distance += 7 }
+        notifyDate = notifyDate.dateByAddingTimeInterval(NSTimeInterval(distance * 24 * 3600))
+        
+        //check to make sure notification date is after the current date - push back a WEEK
         if notifyDate.compare(currentDate) == NSComparisonResult.OrderedAscending {
-            return notifyDate.dateByAddingTimeInterval(24 * 3600)
+            return notifyDate.dateByAddingTimeInterval(7 * 24 * 3600)
         }
         return notifyDate
     }
