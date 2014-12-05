@@ -24,13 +24,19 @@ class AlarmContainer {
         self.notificationBridge = AlarmScheduler()
         
         self.alarms = self.dbBridge.getAlarms()
+        self.alarms.sort { $0.index < $1.index }
     }
     
-    //updates the state of an alarm, registers/unregisters notifications if necessary
+    //updates the state of an alarm
     func update(index: Int, newState: Alarm) -> Bool {
         NSLog("(%@) %@", TAG, "updating an alarm")
-        
-        self.updateState()
+        if 0 <= index && index < self.alarms.count {
+            self.alarms[index] = newState
+            self.alarms[index].index = index
+            
+            self.updateState()
+            return true
+        }
         return false
     }
     
@@ -38,20 +44,16 @@ class AlarmContainer {
     func remove(index: Int) -> Bool {
         NSLog("(%@) %@", TAG, "removing an alarm")
         
-        for i in 0 ..< self.alarms.count {
-            if self.alarms[i].index == index {
-                self.alarms.removeAtIndex(i)
-                
-                //updates indices for everything else
-                for j in 0 ..< self.alarms.count {
-                    if self.alarms[j].index > i {
-                        self.alarms[j].index--
-                    }
-                }
-                
-                self.updateState()
-                return true
+        if 0 <= index && index < self.alarms.count {
+            self.alarms.removeAtIndex(index)
+            
+            //updates indices for everything else
+            for i in index ..< self.alarms.count {
+                self.alarms[i].index--
             }
+            
+            self.updateState()
+            return true
         }
         return false
     }

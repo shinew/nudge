@@ -44,7 +44,7 @@ struct Alarm {
             fromDate: currentDate
         )
         let currentDateStart = NSCalendar.currentCalendar().dateFromComponents(components)!
-        var notifyDate = currentDateStart.dateByAddingTimeInterval(NSTimeInterval(hour * 3600 + minute * 60))
+        var notifyDate = currentDateStart.dateByAddingTimeInterval(NSTimeInterval(self.hour * 3600 + self.minute * 60))
         
         if day == nil {
             //check to make sure notification date is after the current date - push back a DAY
