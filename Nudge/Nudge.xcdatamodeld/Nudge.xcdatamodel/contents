@@ -7,8 +7,9 @@
         <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="minute" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="repeat" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

@@ -18,6 +18,8 @@
 		14C8772E1A30F5D60093AC10 /* AlarmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */; };
 		14C877301A30F66F0093AC10 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8772F1A30F66F0093AC10 /* Alarm.swift */; };
 		14C877321A30F7320093AC10 /* AlarmDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C877311A30F7320093AC10 /* AlarmDate.swift */; };
+		14D024CA1A341243007E1C8C /* AlarmCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D024C91A341243007E1C8C /* AlarmCellView.xib */; };
+		14D024CC1A342A27007E1C8C /* AlarmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D024CB1A342A27007E1C8C /* AlarmCellView.swift */; };
 		14FDE2B21A31280E00C88972 /* AlarmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FDE2B11A31280E00C88972 /* AlarmDB.swift */; };
 		14FDE2B41A313DA500C88972 /* AlarmScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FDE2B31A313DA500C88972 /* AlarmScheduler.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,18 @@
 		14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmContainer.swift; sourceTree = "<group>"; };
 		14C8772F1A30F66F0093AC10 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		14C877311A30F7320093AC10 /* AlarmDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDate.swift; sourceTree = "<group>"; };
+		14D024C91A341243007E1C8C /* AlarmCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmCellView.xib; sourceTree = "<group>"; };
+		14D024CB1A342A27007E1C8C /* AlarmCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCellView.swift; sourceTree = "<group>"; };
+		14D024CF1A342B00007E1C8C /* univers-black-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-black-normal.ttf"; sourceTree = "<group>"; };
+		14D024D01A342B00007E1C8C /* Univers-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Condensed-Bold.ttf"; sourceTree = "<group>"; };
+		14D024D11A342B00007E1C8C /* univers-condensed-italics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-italics.ttf"; sourceTree = "<group>"; };
+		14D024D21A342B00007E1C8C /* univers-condensed-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-medium.ttf"; sourceTree = "<group>"; };
+		14D024D31A342B00007E1C8C /* Univers-Light-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Light-Bold.ttf"; sourceTree = "<group>"; };
+		14D024D41A342B00007E1C8C /* univers-light-condensed-1361511939.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-condensed-1361511939.ttf"; sourceTree = "<group>"; };
+		14D024D51A342B00007E1C8C /* univers-light-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-normal.ttf"; sourceTree = "<group>"; };
+		14D024D61A342B00007E1C8C /* univers-LT-65-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-LT-65-Bold.ttf"; sourceTree = "<group>"; };
+		14D024D71A342B00007E1C8C /* Univers-LT-67-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-LT-67-Condensed-Bold.ttf"; sourceTree = "<group>"; };
+		14D024D81A342B00007E1C8C /* univers-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-medium.ttf"; sourceTree = "<group>"; };
 		14FDE2B11A31280E00C88972 /* AlarmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDB.swift; sourceTree = "<group>"; };
 		14FDE2B31A313DA500C88972 /* AlarmScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +113,7 @@
 		14C877061A30F2AE0093AC10 /* Nudge */ = {
 			isa = PBXGroup;
 			children = (
+				14D024CD1A342AA4007E1C8C /* Misc */,
 				14FDE2B51A31429500C88972 /* UI */,
 				14C8772C1A30F3FC0093AC10 /* Alarms */,
 				14C044341A31698500B55F52 /* Library */,
@@ -141,18 +156,61 @@
 		14C8772C1A30F3FC0093AC10 /* Alarms */ = {
 			isa = PBXGroup;
 			children = (
-				14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */,
 				14C8772F1A30F66F0093AC10 /* Alarm.swift */,
 				14C877311A30F7320093AC10 /* AlarmDate.swift */,
+				14C8772D1A30F5D60093AC10 /* AlarmContainer.swift */,
 				14FDE2B11A31280E00C88972 /* AlarmDB.swift */,
 				14FDE2B31A313DA500C88972 /* AlarmScheduler.swift */,
 			);
 			path = Alarms;
 			sourceTree = "<group>";
 		};
+		14D024C71A34096A007E1C8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14D024C91A341243007E1C8C /* AlarmCellView.xib */,
+				14D024CB1A342A27007E1C8C /* AlarmCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D024C81A340973007E1C8C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		14D024CD1A342AA4007E1C8C /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				14D024CE1A342AB8007E1C8C /* Fonts */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		14D024CE1A342AB8007E1C8C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				14D024CF1A342B00007E1C8C /* univers-black-normal.ttf */,
+				14D024D01A342B00007E1C8C /* Univers-Condensed-Bold.ttf */,
+				14D024D11A342B00007E1C8C /* univers-condensed-italics.ttf */,
+				14D024D21A342B00007E1C8C /* univers-condensed-medium.ttf */,
+				14D024D31A342B00007E1C8C /* Univers-Light-Bold.ttf */,
+				14D024D41A342B00007E1C8C /* univers-light-condensed-1361511939.ttf */,
+				14D024D51A342B00007E1C8C /* univers-light-normal.ttf */,
+				14D024D61A342B00007E1C8C /* univers-LT-65-Bold.ttf */,
+				14D024D71A342B00007E1C8C /* Univers-LT-67-Condensed-Bold.ttf */,
+				14D024D81A342B00007E1C8C /* univers-medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		14FDE2B51A31429500C88972 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				14D024C81A340973007E1C8C /* VC */,
+				14D024C71A34096A007E1C8C /* View */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -239,6 +297,7 @@
 			files = (
 				14C877121A30F2AE0093AC10 /* Main.storyboard in Resources */,
 				14C877171A30F2AE0093AC10 /* LaunchScreen.xib in Resources */,
+				14D024CA1A341243007E1C8C /* AlarmCellView.xib in Resources */,
 				14C877141A30F2AE0093AC10 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +318,7 @@
 			files = (
 				14C8770F1A30F2AE0093AC10 /* ViewController.swift in Sources */,
 				14C8770A1A30F2AE0093AC10 /* AppDelegate.swift in Sources */,
+				14D024CC1A342A27007E1C8C /* AlarmCellView.swift in Sources */,
 				14C877301A30F66F0093AC10 /* Alarm.swift in Sources */,
 				14C044361A3169A300B55F52 /* Conversion.swift in Sources */,
 				14FDE2B41A313DA500C88972 /* AlarmScheduler.swift in Sources */,

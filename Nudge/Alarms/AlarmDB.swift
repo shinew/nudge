@@ -37,7 +37,8 @@ class AlarmDB {
                         repeat: thisItem.valueForKey("repeat") as Bool,
                         dates: AlarmDate(days: thisItem.valueForKey("dates") as Int),
                         hour: thisItem.valueForKey("hour") as Int,
-                        minute: thisItem.valueForKey("minute") as Int
+                        minute: thisItem.valueForKey("minute") as Int,
+                        text: thisItem.valueForKey("text") as String
                     )
                 )
             }
@@ -66,6 +67,7 @@ class AlarmDB {
                 alarmEntity.setValue(alarm.dates.getRaw(), forKey: "dates")
                 alarmEntity.setValue(alarm.hour, forKey: "hour")
                 alarmEntity.setValue(alarm.minute, forKey: "minute")
+                alarmEntity.setValue(alarm.text, forKey: "text")
             }
             
             appContext.save(nil)

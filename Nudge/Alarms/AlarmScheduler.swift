@@ -36,7 +36,7 @@ class AlarmScheduler {
     
     private func setRepeatAlarm(alarm: Alarm) {
         for day in DayOfWeek.allValues {
-            if !alarm.dates.contains(day) {
+            if alarm.dates.contains(day) {
                 self.setNotification(alarm.getDate(day), repeatWeekly: true)
             }
         }
@@ -56,5 +56,7 @@ class AlarmScheduler {
             notification.repeatInterval = NSCalendarUnit.WeekCalendarUnit
         }
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        NSLog("(%@) %@", TAG, "Notification set for \(Conversion.dateToString(date))")
     }
 }

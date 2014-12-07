@@ -17,6 +17,7 @@ struct Alarm {
     var hour: Int //[0, 23], 0 = midnight
     var repeat: Bool
     var index: Int
+    var text: String
     
     init() {
         self.dates = AlarmDate()
@@ -25,15 +26,17 @@ struct Alarm {
         self.hour = 0
         self.repeat = false
         self.index = 0
+        self.text = ""
     }
     
-    init(index: Int, enabled: Bool, repeat: Bool, dates: AlarmDate, hour: Int, minute: Int) {
+    init(index: Int, enabled: Bool, repeat: Bool, dates: AlarmDate, hour: Int, minute: Int, text: String) {
         self.index = index
         self.enabled = enabled
         self.repeat = repeat
         self.dates = dates
         self.hour = hour
         self.minute = minute
+        self.text = text
     }
     
     //Returns a time to fire the (first) notification for this alarm. Guaranteed to be on weekday 'day' (if day != nil), and not before the current time.
@@ -49,7 +52,7 @@ struct Alarm {
         if day == nil {
             //check to make sure notification date is after the current date - push back a DAY
             if notifyDate.compare(currentDate) == NSComparisonResult.OrderedAscending {
-                return notifyDate.dateByAddingTimeInterval(24 * 3600)
+                notifyDate = notifyDate.dateByAddingTimeInterval(24 * 3600)
             }
             return notifyDate
         }
@@ -62,7 +65,7 @@ struct Alarm {
         
         //check to make sure notification date is after the current date - push back a WEEK
         if notifyDate.compare(currentDate) == NSComparisonResult.OrderedAscending {
-            return notifyDate.dateByAddingTimeInterval(7 * 24 * 3600)
+            notifyDate = notifyDate.dateByAddingTimeInterval(7 * 24 * 3600)
         }
         return notifyDate
     }
